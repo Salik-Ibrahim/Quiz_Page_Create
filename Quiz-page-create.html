@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Quiz Page Create</title>
+   <style>
+      * {
+         padding: 0;
+         margin: 0;
+         box-sizing: border-box;
+         font-family: sans-serif;
+      }
+
+      header {
+         position: absolute;
+         display: flex;
+         flex-direction: row;
+         top: 0;
+         left: 0;
+         right: 0;
+         padding: 10px 60px;
+         justify-content: space-between;
+         background: linear-gradient(to right, rgb(13, 0, 72), rgb(108, 0, 108));
+      }
+
+      .logo-button {
+         border-style: none;
+         border-radius: 2px;
+         color: white;
+         padding: 7px 22px;
+         background: linear-gradient(to right, rgb(79, 0, 216), rgb(100, 36, 209));
+      }
+
+      .rightside {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-evenly;
+      }
+
+      .header-button {
+         border-style: none;
+         border-radius: 2px;
+         color: white;
+         padding: 7px 22px;
+         background: transparent;
+      }
+
+      body {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         background: linear-gradient(to right, rgb(13, 0, 72), rgb(108, 0, 108));
+      }
+
+      .outer-box {
+         display: flex;
+         flex-direction: column;
+         position: relative;
+         align-items: center;
+         top: 80px;
+         bottom: 80px;
+         height: 550px;
+         width: 90%;
+         background: linear-gradient(to right, rgb(55, 103, 215), rgb(220, 69, 220));
+         padding: 40px 20px;
+         border-radius: 15px;
+      }
+
+      .question-box {
+         display: flex;
+         background-color: rgb(100, 36, 209);
+         color: white;
+         padding: 13px 17px;
+         width: 95%;
+         height: 60px;
+         border-radius: 10px;
+         font-size: small;
+         font-weight: 600;
+         justify-content: space-around;
+         align-items: center;
+         margin-bottom: 15px;
+      }
+
+      .question-input {
+         color: white;
+         width: 90%;
+         height: 110%;
+         background-color: rgb(13, 0, 72);
+         border: none;
+         border-radius: 10px;
+         padding: 10px 15px;
+      }
+
+      .option-box {
+         display: flex;
+         width: 95%;
+         justify-content: center;
+         row-gap: 10px;
+         column-gap: 15px;
+         margin-bottom: 15px;
+      }
+
+      .choice {
+         display: flex;
+         position: relative;
+         flex-direction: column;
+         align-items: center;
+         color: white;
+         font-size: small;
+         padding-top: 5px;
+         padding-bottom: 15px;
+         border-radius: 10px;
+         height: 150px;
+         width: 100%;
+         font-weight: 600;
+         background-color: rgb(100, 36, 209);
+      }
+
+      .choice-input {
+         margin-top: 5px;
+         width: 95%;
+         height: 80%;
+         color: white;
+         background-color: rgb(13, 0, 72);
+         border: none;
+         border-radius: 10px;
+         padding: 10px 15px;
+      }
+
+      .button-box {
+         position: absolute;
+         right: 3%;
+      }
+
+      .red-button {
+         width: 15px;
+         height: 15px;
+         border-radius: 8px;
+         border-style: none;
+         background-color: red;
+         cursor: pointer;
+      }
+
+      .green-button {
+         width: 15px;
+         height: 15px;
+         border-radius: 8px;
+         border-style: none;
+         background-color: rgb(39, 244, 53);
+         cursor: pointer;
+      }
+
+      .lowest-box {
+         display: flex;
+         width: 95%;
+         justify-content: space-between;
+         margin-top: 20px;
+      }
+
+      .point-container {
+         display: flex;
+         padding: 15px 20px;
+         font-size: small;
+         font-weight: 600;
+         color: white;
+         width: 130px;
+         border-radius: 10px;
+         justify-content: space-between;
+         align-items: center;
+         background-color: rgb(100, 36, 209);
+      }
+
+      .point {
+         background-color: rgb(13, 0, 72);
+         border-style: none;
+         border-radius: 5px;
+         width: 38px;
+         height: 28px;
+         color: white;
+      }
+
+      .final-button-container {
+         display: flex;
+         width: 300px;
+         justify-content: space-evenly;
+      }
+
+      .final-button {
+         border: none;
+         padding: 10px 20px;
+         border-radius: 10px;
+         height: 45px;
+
+         font-size: small;
+         color: white;
+         background-image: linear-gradient(to right, rgb(20, 94, 173), rgb(55, 196, 243));
+         cursor: pointer;
+      }
+
+      footer {
+         position: absolute;
+         display: flex;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         padding: 13px;
+         background: linear-gradient(to right, rgb(55, 103, 215), rgb(220, 69, 220));
+         justify-content: center;
+      }
+
+      .reserve-rights {
+         font-size: small;
+         color: white;
+      }
+   </style>
+</head>
+
+<body>
+   <header>
+      <div class="logo-button">
+         Logo
+      </div>
+      <div class="rightside">
+         <div>
+            <button class="header-button">Sign In</button>
+         </div>
+         <div>
+            <button class="header-button">Create</button>
+         </div>
+      </div>
+   </header>
+   <div class="outer-box">
+      <div class="question-box">
+         Question:
+         <input class="question-input">
+      </div>
+      <div class="option-box">
+         <div class="choice">
+            Choice-1
+            <div class="button-box">
+               <button class="red-button"></button>
+               <button class="green-button"></button>
+            </div>
+            <input class="choice-input">
+         </div>
+         <div class="choice">
+            Choice-2
+            <div class="button-box">
+               <button class="red-button"></button>
+               <button class="green-button"></button>
+            </div>
+            <input class="choice-input">
+         </div>
+      </div>
+      <div class="option-box">
+         <div class="choice">
+            Choice-3
+            <div class="button-box">
+               <button class="red-button"></button>
+               <button class="green-button"></button>
+            </div>
+            <input class="choice-input">
+         </div>
+         <div class="choice">
+            Choice-4
+            <div class="button-box">
+               <button class="red-button"></button>
+               <button class="green-button"></button>
+            </div>
+            <input class="choice-input">
+         </div>
+      </div>
+      <div class="lowest-box">
+         <div class="point-container">
+            Point:<input class="point"></input>
+         </div>
+         <div class="final-button-container">
+            <div><button class="final-button">Previous</button></div>
+            <div><button class="final-button">Next</button></div>
+            <div><button class="final-button">Finish</button></div>
+         </div>
+      </div>
+   </div>
+   <footer>
+      <a class="reserve-rights">
+         All Rights Reserved | abcd@gmail.com
+      </a>
+   </footer>
+</body>
+
+</html>
